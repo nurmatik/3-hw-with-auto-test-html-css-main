@@ -5,10 +5,12 @@
 }
 
 .container {
-    outline: 1px solid red; /* чтобы контейнер был виден, в конце можно будет удалить это св-во */
+    outline: 1px solid red;
+    /* чтобы контейнер был виден, в конце можно будет удалить это св-во */
     margin: 0 auto;
     width: 100%;
     /* 📍 Максимальная ширина для контейнера */
+    max-width: 1140px;
 }
 
 body {
@@ -32,14 +34,21 @@ header span {
     padding: 60px 0;
     min-height: 100vh;
     /* 📍 Свойства flexbox для размещения container-a вертикально по центру */
+    display: flex;
+    align-items: center;
 }
 
 .main-section .wrapper {
     /* 📍 Свойствa flexbox для размещения блока с текстом и изображения в ряд, и центрирования их по вертикали */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 .text-wrapper {
     /* 📍 Cвойство для ограничения ширины блока с текстом в первой секции */
+    width: 425px;
+    height: 180px;
 }
 
 .main-title {
@@ -64,6 +73,7 @@ header span {
 
 .about-section .wrapper {
     /* 📍 Свойствa flexbox для отступов между элементами select, .info-wrapper и .skills-wrapper  */
+
 }
 
 select {
@@ -73,7 +83,7 @@ select {
     padding: 8px 12px;
     font-weight: 400;
     font-size: 16px;
-    appearance: none; 
+    appearance: none;
     background-image: url("./ep_arrow-down.svg");
     background-repeat: no-repeat;
     background-position: right 12px top 50%;
@@ -82,11 +92,15 @@ select {
 select:hover,
 .text-field:hover {
     /* 📍 Стили для выпадающего списка и текстового поля при наведении курсора */
+    background-color: #fff;
+    color: rgba(48, 48, 48, 0.2);
 }
 
 
 .info-wrapper {
     /* 📍 Свойство flexbox для расположения 2-х списков в ряд */
+    display: flex;
+
 }
 
 .section-title {
@@ -103,6 +117,7 @@ select:hover,
 .frameworks-list,
 .books-list {
     /* 📍 Свойства flexbox для отступов между элементами в списках */
+    gap: 16px;
 }
 
 .frameworks-list {
@@ -114,10 +129,14 @@ select:hover,
 
 .skills-block {
     /* 📍 Свойства flexbox для расположения формы над элементами с классом .label */
+    justify-content: flex-start;
 }
 
 .skills {
     /* 📍 Свойства flexbox для расположения элементов с классом .label */
+    display: flex;
+    flex-direction: column;
+    gap: 20px
 }
 
 .books-list {
@@ -156,15 +175,23 @@ form {
     font-weight: 700;
     font-size: 14px;
     color: #fff;
+    cursor: pointer;
+    transition: .2s ease;
 }
 
 .btn:hover {
     /* 📍 Стили для кнопки при наведении курсора */
+    transform: translateY(5px);
 }
 
 .line {
     margin: 60px 0;
 }
+
+.location-select {
+    margin-bottom: 60px;
+}
+
 
 table {
     border: 1px solid #95a1bb;
@@ -174,7 +201,8 @@ table {
     margin: 0 auto;
 }
 
-th, td {
+th,
+td {
     padding: 12px 15px;
 }
 
@@ -182,6 +210,7 @@ footer {
     background-color: rgba(163, 167, 255, 0.3);
     padding: 26px 0;
     /* 📍 Свойство для расположения ссылки горизонтально по центру */
+    text-align: center;
 }
 
 .footer-link {
@@ -193,4 +222,5 @@ footer {
 
 .footer-link:hover {
     /* 📍 Стили для ссылки при наведении курсора */
+    text-decoration: underline;
 }
